@@ -3,7 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import myUserRoute from "./routes/MyUserRoute"
-import path from "path";
+//import path from "path";
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
 .then(() => {
@@ -23,7 +23,7 @@ app.use(
     })
 );
 
-app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+//app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 app.get("/health", async(req:Request, res:Response) => {
       res.json({message: "Health OK!"});
