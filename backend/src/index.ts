@@ -17,8 +17,8 @@ const port = 7000;
 app.use(express.json());
 app.use(cors());
 
-app.get("/test", async(rerq:Request, res:Response) => {
-      res.json({message: "Hello!"});
+app.get("/health", async(req:Request, res:Response) => {
+      res.json({message: "Health OK!"});
 });
 
 app.use("/api/my/user", myUserRoute);
